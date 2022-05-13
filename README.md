@@ -13,7 +13,7 @@ This is intended strictly for learning and/or development purposes only.
 
 Follow the steps outlined below to get the container up and running.
 
-1. Clone [this repo](https://github.com/digitalminellc/docker-mssql.git) to your desktop
+1. Clone [this repo](https://github.com/stevewithington/mssql2019.git) to your desktop
 2. Launch your shell program and `cd` into the cloned directory
 3. Modify the `setup.sql` file with your custom TSQL
 4. Select one of the following options below
@@ -42,7 +42,7 @@ Docker will then begin to do its thing.
 4. Start a new container using `docker run`
 
   ```bash
-  docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=5trongP@55w0rd' -p 5533:1433 --name your-container-name -d yourname/yourapp
+  docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=5trongP@55w0rd' -p 5519:1433 --name your-container-name -d yourname/yourapp
   ```
 
 **Note:** MSSQL passwords must be at least eight (8) characters long, contain upper case, lower case, and digits.
