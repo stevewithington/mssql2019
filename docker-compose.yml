@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+
+  db:
+    build:
+      context: .
+
+    image: digitalmine/mssql2019:latest
+
+    container_name: "sql19"
+    #hostname: sql19
+
+    environment:
+      ACCEPT_EULA: "Y"
+      # Note: MSSQL passwords must be at least 8 characters long, contain upper case, lower case and digits.  
+      SA_PASSWORD: 5trongP@55w0rd
+      MSSQL_PID: "Developer" 
+      MSSQL_AGENT_ENABLED: "true"
+
+    volumes:
+      - vol-mssql19:/var/opt/mssql
+      # Note: this mounts the local `backup` directory to the container's `backup` directory
+      - ./backup:/var/opt/mssql/backup
+
+    ports:
+      - "5519:1433"
+
+volumes:
+  vol-mssql19:
